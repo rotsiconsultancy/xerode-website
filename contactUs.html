@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 
 <html class="dark" lang="en"><head>
+<script>
+    if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+        document.documentElement.classList.remove('dark')
+    } else {
+        document.documentElement.classList.add('dark')
+    }
+</script>
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -13,54 +21,54 @@
             theme: {
                 extend: {
                     colors: {
-                        "inverse-on-surface": "#313030",
-                        "surface-tint": "#ffb77d",
-                        "primary-fixed-dim": "#ffb77d",
-                        "surface-bright": "#393939",
-                        "surface-dim": "#131313",
-                        "on-surface-variant": "#ddc1ae",
-                        "on-secondary-fixed-variant": "#6a3b0f",
-                        "on-error": "#690005",
-                        "primary": "#ffb77d",
-                        "surface-container-high": "#2a2a2a",
-                        "on-tertiary": "#00344c",
-                        "tertiary-fixed": "#c7e7ff",
-                        "surface-container": "#201f1f",
-                        "tertiary": "#85cfff",
-                        "on-secondary-fixed": "#2f1500",
-                        "error": "#ffb4ab",
-                        "surface-variant": "#353534",
-                        "outline-variant": "#564334",
-                        "on-tertiary-fixed": "#001e2e",
-                        "on-primary-container": "#623200",
-                        "secondary-fixed": "#ffdcc3",
-                        "inverse-primary": "#904d00",
-                        "on-primary-fixed": "#2f1500",
-                        "error-container": "#93000a",
-                        "tertiary-fixed-dim": "#85cfff",
-                        "tertiary-container": "#00b5fc",
-                        "outline": "#a48c7a",
-                        "background": "#131313",
-                        "on-surface": "#e5e2e1",
-                        "secondary-container": "#6a3b0f",
-                        "on-tertiary-container": "#004360",
-                        "on-secondary": "#4d2600",
-                        "surface": "#131313",
-                        "on-secondary-container": "#e9a771",
-                        "on-tertiary-fixed-variant": "#004c6c",
-                        "primary-container": "#ff8c00",
-                        "on-primary-fixed-variant": "#6e3900",
-                        "on-background": "#e5e2e1",
-                        "surface-container-low": "#1c1b1b",
-                        "surface-container-highest": "#353534",
-                        "surface-container-lowest": "#0e0e0e",
-                        "inverse-surface": "#e5e2e1",
-                        "secondary-fixed-dim": "#fdb881",
-                        "on-primary": "#4d2600",
-                        "primary-fixed": "#ffdcc3",
-                        "secondary": "#fdb881",
-                        "on-error-container": "#ffdad6"
-                    },
+              "inverse-on-surface": "var(--color-inverse-on-surface)",
+              "surface-tint": "var(--color-surface-tint)",
+              "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+              "surface-bright": "var(--color-surface-bright)",
+              "surface-dim": "var(--color-surface-dim)",
+              "on-surface-variant": "var(--color-on-surface-variant)",
+              "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+              "on-error": "var(--color-on-error)",
+              "primary": "var(--color-primary)",
+              "surface-container-high": "var(--color-surface-container-high)",
+              "on-tertiary": "var(--color-on-tertiary)",
+              "tertiary-fixed": "var(--color-tertiary-fixed)",
+              "surface-container": "var(--color-surface-container)",
+              "tertiary": "var(--color-tertiary)",
+              "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+              "error": "var(--color-error)",
+              "surface-variant": "var(--color-surface-variant)",
+              "outline-variant": "var(--color-outline-variant)",
+              "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+              "on-primary-container": "var(--color-on-primary-container)",
+              "secondary-fixed": "var(--color-secondary-fixed)",
+              "inverse-primary": "var(--color-inverse-primary)",
+              "on-primary-fixed": "var(--color-on-primary-fixed)",
+              "error-container": "var(--color-error-container)",
+              "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+              "tertiary-container": "var(--color-tertiary-container)",
+              "outline": "var(--color-outline)",
+              "background": "var(--color-background)",
+              "on-surface": "var(--color-on-surface)",
+              "secondary-container": "var(--color-secondary-container)",
+              "on-tertiary-container": "var(--color-on-tertiary-container)",
+              "on-secondary": "var(--color-on-secondary)",
+              "surface": "var(--color-surface)",
+              "on-secondary-container": "var(--color-on-secondary-container)",
+              "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+              "primary-container": "var(--color-primary-container)",
+              "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+              "on-background": "var(--color-on-background)",
+              "surface-container-low": "var(--color-surface-container-low)",
+              "surface-container-highest": "var(--color-surface-container-highest)",
+              "surface-container-lowest": "var(--color-surface-container-lowest)",
+              "inverse-surface": "var(--color-inverse-surface)",
+              "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+              "on-primary": "var(--color-on-primary)",
+              "primary-fixed": "var(--color-primary-fixed)",
+              "secondary": "var(--color-secondary)",
+              "on-error-container": "var(--color-on-error-container)",
+            },
                     fontFamily: {
                         "headline": ["Space Grotesk"],
                         "body": ["Manrope"],
@@ -80,20 +88,136 @@
             background-size: 40px 40px;
         }
     </style>
+
+    <style id="theme-vars">
+    :root {
+        /* Light Mode Colors */
+        --color-inverse-on-surface: #313030;
+        --color-surface-tint: #ffb77d;
+        --color-primary-fixed-dim: #ffb77d;
+        --color-surface-bright: #ffffff;
+        --color-surface-dim: #ffffff;
+        --color-on-surface-variant: #564334;
+        --color-on-secondary-fixed-variant: #6a3b0f;
+        --color-on-error: #690005;
+        --color-primary: #904d00;
+        --color-surface-container-high: #e5e5e5;
+        --color-on-tertiary: #00344c;
+        --color-tertiary-fixed: #c7e7ff;
+        --color-surface-container: #eeeeee;
+        --color-tertiary: #85cfff;
+        --color-on-secondary-fixed: #2f1500;
+        --color-error: #ffb4ab;
+        --color-surface-variant: #353534;
+        --color-outline-variant: #564334;
+        --color-on-tertiary-fixed: #001e2e;
+        --color-on-primary-container: #2f1500;
+        --color-secondary-fixed: #ffdcc3;
+        --color-inverse-primary: #904d00;
+        --color-on-primary-fixed: #2f1500;
+        --color-error-container: #93000a;
+        --color-tertiary-fixed-dim: #85cfff;
+        --color-tertiary-container: #00b5fc;
+        --color-outline: #857364;
+        --color-background: #ffffff;
+        --color-on-surface: #131313;
+        --color-secondary-container: #6a3b0f;
+        --color-on-tertiary-container: #004360;
+        --color-on-secondary: #4d2600;
+        --color-surface: #ffffff;
+        --color-on-secondary-container: #e9a771;
+        --color-on-tertiary-fixed-variant: #004c6c;
+        --color-primary-container: #ffdcc3;
+        --color-on-primary-fixed-variant: #6e3900;
+        --color-on-background: #131313;
+        --color-surface-container-low: #f7f7f7;
+        --color-surface-container-highest: #d1d1d1;
+        --color-surface-container-lowest: #ffffff;
+        --color-inverse-surface: #e5e2e1;
+        --color-secondary-fixed-dim: #fdb881;
+        --color-on-primary: #ffffff;
+        --color-primary-fixed: #ffdcc3;
+        --color-secondary: #fdb881;
+        --color-on-error-container: #ffdad6;
+    }
+    .dark {
+        /* Dark Mode Colors */
+        --color-inverse-on-surface: #313030;
+        --color-surface-tint: #ffb77d;
+        --color-primary-fixed-dim: #ffb77d;
+        --color-surface-bright: #393939;
+        --color-surface-dim: #131313;
+        --color-on-surface-variant: #ddc1ae;
+        --color-on-secondary-fixed-variant: #6a3b0f;
+        --color-on-error: #690005;
+        --color-primary: #ffb77d;
+        --color-surface-container-high: #2a2a2a;
+        --color-on-tertiary: #00344c;
+        --color-tertiary-fixed: #c7e7ff;
+        --color-surface-container: #201f1f;
+        --color-tertiary: #85cfff;
+        --color-on-secondary-fixed: #2f1500;
+        --color-error: #ffb4ab;
+        --color-surface-variant: #353534;
+        --color-outline-variant: #564334;
+        --color-on-tertiary-fixed: #001e2e;
+        --color-on-primary-container: #623200;
+        --color-secondary-fixed: #ffdcc3;
+        --color-inverse-primary: #904d00;
+        --color-on-primary-fixed: #2f1500;
+        --color-error-container: #93000a;
+        --color-tertiary-fixed-dim: #85cfff;
+        --color-tertiary-container: #00b5fc;
+        --color-outline: #a48c7a;
+        --color-background: #131313;
+        --color-on-surface: #e5e2e1;
+        --color-secondary-container: #6a3b0f;
+        --color-on-tertiary-container: #004360;
+        --color-on-secondary: #4d2600;
+        --color-surface: #131313;
+        --color-on-secondary-container: #e9a771;
+        --color-on-tertiary-fixed-variant: #004c6c;
+        --color-primary-container: #ff8c00;
+        --color-on-primary-fixed-variant: #6e3900;
+        --color-on-background: #e5e2e1;
+        --color-surface-container-low: #1c1b1b;
+        --color-surface-container-highest: #353534;
+        --color-surface-container-lowest: #0e0e0e;
+        --color-inverse-surface: #e5e2e1;
+        --color-secondary-fixed-dim: #fdb881;
+        --color-on-primary: #4d2600;
+        --color-primary-fixed: #ffdcc3;
+        --color-secondary: #fdb881;
+        --color-on-error-container: #ffdad6;
+    }
+    </style>
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background text-on-background bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
-<nav class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-8 py-6 max-w-none fixed top-0 z-50">
-<div class="text-2xl font-black tracking-tighter text-[#FFB77D]">Xerode Civil</div>
-<div class="hidden md:flex gap-12 items-center">
-<a class="text-gray-400 font-['Space_Grotesk'] font-bold tracking-tight hover:text-[#FFB77D] transition-colors duration-300 scale-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]" href="#">Projects</a>
-<a class="text-gray-400 font-['Space_Grotesk'] font-bold tracking-tight hover:text-[#FFB77D] transition-colors duration-300 scale-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]" href="#">Services</a>
-<a class="text-gray-400 font-['Space_Grotesk'] font-bold tracking-tight hover:text-[#FFB77D] transition-colors duration-300 scale-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]" href="#">About</a>
-<a class="text-[#FFB77D] border-b-2 border-[#FFB77D] pb-1 font-['Space_Grotesk'] font-bold tracking-tight" href="#">Contact</a>
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-outline/10">
+<div class="flex justify-between items-center w-full px-8 h-24 max-w-screen-2xl mx-auto">
+<a href="index.html" class="flex items-center">
+    <img src="https://xerodecivilbuild.com/wp-content/uploads/2023/06/My-project-1-6-254x300.png" alt="Xerode Civil Build Logo" class="h-16 w-auto">
+</a>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-['Space_Grotesk'] tracking-tight font-bold uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="portfolio.html">Portfolio</a>
+<a class="font-['Space_Grotesk'] tracking-tight font-bold uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+<a class="font-['Space_Grotesk'] tracking-tight font-bold uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="about.html">About Us</a>
 </div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold text-sm tracking-tight hover:bg-primary transition-colors duration-300 rounded-DEFAULT">
-            Request Quote
-        </button>
+<div class="flex items-center gap-4">
+    <button id="theme-toggle" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-300">
+        <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+    </button>
+    <button id="mobile-menu-open" class="md:hidden p-2 text-on-surface-variant hover:text-primary transition-colors duration-300">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <a href="contactUs.html" class="bg-primary-container text-on-primary-container px-6 py-3 font-['Space_Grotesk'] font-bold uppercase tracking-tight transition-all duration-300 hover:bg-primary hover:text-on-primary active:scale-95">
+        Contact Us
+    </a>
+</div>
+</div>
 </nav>
 <main class="pt-24">
 <!-- Hero Section -->
@@ -212,21 +336,26 @@
 </div>
 </section>
 <!-- Map Section -->
-<section class="w-full h-[500px] grayscale contrast-[1.1] brightness-[0.8] mt-12 relative">
+<section class="w-full h-[500px] mt-12 relative grayscale contrast-[1.1] brightness-[0.8]">
+<iframe
+    width="100%"
+    height="100%"
+    style="border:0;"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://maps.google.com/maps?q=Java+House+-+Uniafric+House,Nairobi,Kenya&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+<!-- Overlay to maintain look if key is missing or to just provide the dark look -->
 <div class="absolute inset-0 bg-primary/5 pointer-events-none mix-blend-overlay"></div>
-<img alt="Dark technical map of Nairobi" class="w-full h-full object-cover" data-alt="Dark monochrome stylized map view of Nairobi city grid" data-location="Nairobi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANUQTn-1pG8jdWmuWv0Q5_6GAPLPGl9cNumCfOobo6OEng8bO5QTYMo5j6W4vjPxvqbzgyB2Q2KrBJoTKtllPmafqoS-0u0elU9oA1XMJBbhIFO_wDh6JvX9HOf6kwxfto83tNzFXmm4YRf2b2De3aEYRV0f4AMAUX2UTUgaWLiY2KkaplBXTgMWPpYCbwmEjW_GutDN9ohsuZaH6SAqap4gkA1HvtemukGVXeHRlceX6X3QLfCJMS5c2NiBn57TvR0AMDXyJWaR0"/>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
-<div class="bg-primary text-on-primary p-3 rounded-full shadow-2xl animate-pulse">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
-</div>
-<div class="mt-4 bg-surface-container-high px-4 py-2 text-[10px] font-label tracking-widest uppercase border border-outline-variant/20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">Xerode HQ</div>
-</div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-[#131313] dark:bg-[#131313] w-full py-12 px-8 border-t border-[#353534] opacity-15">
+<footer class="bg-surface-container-low w-full py-12 px-8 border-t border-outline/10">
 <div class="w-full mt-auto flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
-<div class="text-[#FFB77D] font-bold text-lg mb-4 md:mb-0">Xerode Civil Build</div>
+<div class="mb-4 md:mb-0">
+    <img src="https://xerodecivilbuild.com/wp-content/uploads/2023/06/My-project-1-6-254x300.png" alt="Xerode Civil Build Logo" class="h-10 w-auto">
+</div>
 <div class="flex gap-8 mb-4 md:mb-0">
 <a class="text-gray-500 hover:text-white transition-opacity font-['Inter'] text-sm" href="#">Privacy Policy</a>
 <a class="text-gray-500 hover:text-white transition-opacity font-['Inter'] text-sm" href="#">Terms of Service</a>
@@ -236,4 +365,68 @@
 <div class="text-gray-500 font-['Inter'] text-sm">© 2024 Xerode Civil Build. All structural rights reserved.</div>
 </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        }
+    });
+</script>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+    <button id="mobile-menu-close" class="absolute top-8 right-8 p-4 text-on-surface-variant hover:text-primary transition-colors duration-300">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+
+    <div class="mb-12">
+        <img src="https://xerodecivilbuild.com/wp-content/uploads/2023/06/My-project-1-6-254x300.png" alt="Xerode Civil Build Logo" class="h-24 w-auto">
+    </div>
+
+    <nav class="flex flex-col items-center gap-8">
+        <a href="index.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">Home</a>
+        <a href="portfolio.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">Portfolio</a>
+        <a href="services.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">Services</a>
+        <a href="about.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">About Us</a>
+        <a href="contactUs.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-primary hover:text-primary-container transition-colors">Contact</a>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuOpenBtn = document.getElementById('mobile-menu-open');
+        const menuCloseBtn = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuOpenBtn && menuCloseBtn && mobileMenu) {
+            menuOpenBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            menuCloseBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+        }
+    });
+</script>
 </body></html>

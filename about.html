@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark')
+        } else {
+            document.documentElement.classList.add('dark')
+        }
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Us | Xerode Civil Build</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "var(--color-background)",
+                        "primary-container": "var(--color-primary-container)",
+                        "on-background": "var(--color-on-background)",
+                        "primary": "var(--color-primary)",
+                        "on-primary": "var(--color-on-primary)",
+                        "surface-container-low": "var(--color-surface-container-low)",
+                        "on-surface-variant": "var(--color-on-surface-variant)",
+                        "outline": "var(--color-outline)",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style id="theme-vars">
+        :root {
+            --color-background: #ffffff;
+            --color-primary-container: #ffdcc3;
+            --color-on-background: #131313;
+            --color-primary: #904d00;
+            --color-on-primary: #ffffff;
+            --color-surface-container-low: #f7f7f7;
+            --color-on-surface-variant: #564334;
+            --color-outline: #857364;
+        }
+        .dark {
+            --color-background: #131313;
+            --color-primary-container: #ff8c00;
+            --color-on-background: #e5e2e1;
+            --color-primary: #ffb77d;
+            --color-on-primary: #4d2600;
+            --color-surface-container-low: #1c1b1b;
+            --color-on-surface-variant: #ddc1ae;
+            --color-outline: #a48c7a;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+    <nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-2xl border-b border-outline/10">
+        <div class="flex justify-between items-center w-full px-8 h-24 max-w-screen-2xl mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="https://xerodecivilbuild.com/wp-content/uploads/2023/06/My-project-1-6-254x300.png" alt="Xerode Civil Build Logo" class="h-16 w-auto">
+            </a>
+            <div class="hidden md:flex items-center gap-12">
+                <a class="font-headline tracking-tight font-bold uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="portfolio.html">Portfolio</a>
+                <a class="font-headline tracking-tight font-bold uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+                <a class="font-headline tracking-tight font-bold uppercase text-primary transition-colors duration-300 border-b-2 border-primary" href="about.html">About Us</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                </button>
+                <button id="mobile-menu-open" class="md:hidden p-2 text-on-surface-variant hover:text-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <a href="contactUs.html" class="bg-primary-container text-on-primary-container px-6 py-3 font-headline font-bold uppercase tracking-tight transition-all duration-300 hover:bg-primary hover:text-on-primary active:scale-95">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 min-h-screen">
+        <section class="max-w-screen-2xl mx-auto px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h1 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter mb-12">
+                        Built on Integrity. <br/>
+                        <span class="text-primary">Driven by Innovation.</span>
+                    </h1>
+                    <div class="space-y-8 font-body text-xl text-on-surface-variant leading-relaxed">
+                        <p>
+                            Based in Kianyaga and serving the East African region, Xerode Civil Building Contractors Ltd combines local expertise with international standards.
+                        </p>
+                        <p>
+                            We turn blueprints into landmarks using sustainable practices and cutting-edge civil technology. Our commitment to permanence ensures that every structure we build withstands the test of time and climate.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative h-[600px] bg-surface-container-low p-4 overflow-hidden border border-outline/10">
+                    <img alt="Architectural detail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGHZE6D1ioXgIvap26PQpSlV2l93kk2_JN1XFygVDu9QXd9uaW9k0zftmG4kOBSbBTyrm8cSIZcWVr12KU7kCS_6zaS3rEXTOo32ZpO-3aZDPg6ACe-0MPBLm3fhVNdyNjGPvN-Gnn1eH6CMOON0ws3NqrNUY7M7i-YPOe6Q64jRnhPO9fp-LJGpIlqnlIhQUclegH39B8klY6h_iW1BkX8wJIeMaD5wWzhBPwlD_NgZGVUQ5kqz-HhcQHcRt0ZU9nRaV6q3VBSKs"/>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-16 px-8 mt-auto bg-surface-container-low border-t border-outline/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-screen-2xl mx-auto text-center md:text-left">
+            <div>
+                <div class="mb-8">
+                    <img src="https://xerodecivilbuild.com/wp-content/uploads/2023/06/My-project-1-6-254x300.png" alt="Xerode Civil Build Logo" class="h-12 w-auto mx-auto md:mx-0">
+                </div>
+                <p class="font-body text-sm uppercase tracking-widest text-on-surface-variant leading-relaxed max-w-xs mx-auto md:mx-0">
+                    Engineering excellence from the ground up. Serving the future of East Africa.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <a class="font-body text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+                <a class="font-body text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-body text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+            </div>
+            <div class="text-on-surface-variant">
+                <p class="font-body text-sm uppercase tracking-widest">
+                    © 2024 Xerode Civil Build. <br/>
+                    Engineered for Permanence.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+        <button id="mobile-menu-close" class="absolute top-8 right-8 p-4 text-on-surface-variant hover:text-primary transition-colors duration-300">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <div class="mb-12">
+            <img src="https://xerodecivilbuild.com/wp-content/uploads/2023/06/My-project-1-6-254x300.png" alt="Xerode Civil Build Logo" class="h-24 w-auto">
+        </div>
+        <nav class="flex flex-col items-center gap-8">
+            <a href="index.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">Home</a>
+            <a href="portfolio.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">Portfolio</a>
+            <a href="services.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">Services</a>
+            <a href="about.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-on-background hover:text-primary transition-colors">About Us</a>
+            <a href="contactUs.html" class="font-headline text-3xl font-black uppercase tracking-tighter text-primary hover:text-primary-container transition-colors">Contact</a>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    htmlElement.classList.toggle('dark');
+                    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+                });
+            }
+            const menuOpenBtn = document.getElementById('mobile-menu-open');
+            const menuCloseBtn = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuOpenBtn && menuCloseBtn && mobileMenu) {
+                menuOpenBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+                menuCloseBtn.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+            }
+        });
+    </script>
+</body>
+</html>
