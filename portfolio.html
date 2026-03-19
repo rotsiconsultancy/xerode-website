@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ffb77d",
+              "primary-fixed-dim": "#ffb77d",
+              "tertiary-fixed": "#c7e7ff",
+              "surface-container-highest": "#353534",
+              "outline-variant": "#564334",
+              "on-tertiary": "#00344c",
+              "on-surface-variant": "#ddc1ae",
+              "surface-tint": "#ffb77d",
+              "secondary-fixed": "#ffdcc3",
+              "on-primary": "#4d2600",
+              "secondary-fixed-dim": "#fdb881",
+              "secondary": "#fdb881",
+              "on-secondary": "#4d2600",
+              "secondary-container": "#6a3b0f",
+              "surface-container-lowest": "#0e0e0e",
+              "tertiary-container": "#00b5fc",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e5e2e1",
+              "on-secondary-fixed-variant": "#6a3b0f",
+              "error-container": "#93000a",
+              "on-tertiary-container": "#004360",
+              "background": "#131313",
+              "surface": "#131313",
+              "on-surface": "#e5e2e1",
+              "surface-container": "#201f1f",
+              "surface-bright": "#393939",
+              "on-tertiary-fixed-variant": "#004c6c",
+              "on-secondary-fixed": "#2f1500",
+              "inverse-primary": "#904d00",
+              "tertiary-fixed-dim": "#85cfff",
+              "surface-variant": "#353534",
+              "outline": "#a48c7a",
+              "on-primary-fixed-variant": "#6e3900",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#001e2e",
+              "on-primary-fixed": "#2f1500",
+              "on-secondary-container": "#e9a771",
+              "surface-container-low": "#1c1b1b",
+              "primary-container": "#ff8c00",
+              "error": "#ffb4ab",
+              "on-primary-container": "#623200",
+              "inverse-surface": "#e5e2e1",
+              "primary-fixed": "#ffdcc3",
+              "surface-dim": "#131313",
+              "inverse-on-surface": "#313030",
+              "tertiary": "#85cfff",
+              "surface-container-high": "#2a2a2a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        font-family: 'Manrope', sans-serif;
+      }
+      .architectural-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl border-b border-[#FFB77D]/10">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#FFB77D]">Xerode Civil Build</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-[#FFB77D] border-b-2 border-[#FFB77D] pb-1 font-['Space_Grotesk'] uppercase tracking-wider font-bold text-sm transition-colors duration-300" href="#">Projects</a>
+<a class="text-white/70 font-['Space_Grotesk'] uppercase tracking-wider font-bold text-sm hover:text-[#FFB77D] transition-colors duration-300" href="#">Expertise</a>
+<a class="text-white/70 font-['Space_Grotesk'] uppercase tracking-wider font-bold text-sm hover:text-[#FFB77D] transition-colors duration-300" href="#">Materials</a>
+<a class="text-white/70 font-['Space_Grotesk'] uppercase tracking-wider font-bold text-sm hover:text-[#FFB77D] transition-colors duration-300" href="#">Studio</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-['Space_Grotesk'] uppercase tracking-wider font-bold text-sm hover:bg-primary transition-colors duration-300">
+                Consultation
+            </button>
+</div>
+</nav>
+<!-- SideNavBar (Project Filter) -->
+<aside class="h-screen w-64 fixed left-0 top-0 hidden lg:flex flex-col bg-[#1C1B1B] border-r border-[#FFB77D]/5 z-40">
+<div class="flex flex-col gap-2 pt-32 pb-8">
+<div class="px-8 mb-8">
+<h3 class="font-['Space_Grotesk'] text-lg font-black text-[#FFB77D] mb-1">Project Filter</h3>
+<p class="font-['Inter'] text-[10px] font-medium uppercase tracking-widest text-white/40">Technical Category</p>
+</div>
+<a class="bg-[#353534] text-[#FFB77D] border-l-4 border-[#FF8C00] px-8 py-4 flex items-center gap-4 group transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">architecture</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Bridges</span>
+</a>
+<a class="text-white/40 px-8 py-4 flex items-center gap-4 group hover:bg-[#2A2A2A] hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">science</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Laboratories</span>
+</a>
+<a class="text-white/40 px-8 py-4 flex items-center gap-4 group hover:bg-[#2A2A2A] hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">factory</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Industrial</span>
+</a>
+<a class="text-white/40 px-8 py-4 flex items-center gap-4 group hover:bg-[#2A2A2A] hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-xl">foundation</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Infrastructure</span>
+</a>
+</div>
+<div class="mt-auto p-8 border-t border-[#FFB77D]/5 flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest rounded-full overflow-hidden border border-[#FFB77D]/20">
+<img alt="Firm Principal" data-alt="Portrait of a professional senior architect in black suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD04EAdf_TRpUYPplkAnOFZvS0tau6rwjlhOLgzTGUvN2Oo5OurZkujiQzHzMWc7DNy3AUSuewIeEoa0NwM9YdiOjUzCvfQwI9i-C1iNmCUq3UjDa5R6qjwXvlLw6svcxCwPUEH_HgFxwYLivuHNR0zl3ajr5c5RreXRipEGDE3ShW1GFtKntApMZ2y6StY0Wz1GQ0FGGlbn1xKhKLMP7Pxonbcby9hPSYhYjxCdq3Hk192vqsmQtCt8rQ9Bofu4RRwxA0_cxH7gZ0"/>
+</div>
+<div>
+<p class="text-[10px] font-bold text-white uppercase tracking-tighter">David Xerode</p>
+<p class="text-[9px] text-white/40 uppercase tracking-widest">Principal Engineer</p>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:pl-64 pt-32 pb-24 min-h-screen">
+<div class="max-w-[1400px] mx-auto px-8 md:px-12">
+<!-- Hero Header -->
+<header class="mb-24">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="w-12 h-[2px] bg-primary"></span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-[0.4em] text-primary">Portfolio MMXXIV</span>
+</div>
+<h1 class="font-['Space_Grotesk'] text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
+                    Structural <br/> <span class="text-transparent border-text stroke-primary" style="-webkit-text-stroke: 1px #ffb77d;">Excellence.</span>
+</h1>
+<p class="max-w-2xl text-lg text-on-surface-variant font-light leading-relaxed">
+                    A curated selection of our most complex engineering feats, where mathematical precision meets architectural vision. We build the foundations of the future.
+                </p>
+</header>
+<!-- Projects Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Project 1: The Nairobi Viaduct (Infrastructure) -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low min-h-[500px] flex flex-col justify-end p-8 md:p-12">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-40 grayscale hover:grayscale-0" data-alt="Massive concrete bridge pillars stretching across a valley at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDu9-uLaAItwT5KbMOMQ7uTpGM2mwbZ1MuJSNz9rJI4ABuAzp-f4PJzQbVsE1SpKAjLeW9Wdiybwl7Pa9M1-BeMsRE3hpRXiuJchqKy5Gh8mw8EcHR82IMN1IfajeFfSLnvQg0ZcOmRiBI0yfAUyYKJS9zmnyw95akyoDNSC9CCPyWY48EBMDZj-9JLjx8mxsmM3-nBgeQ_B3gvHjgTIDjpWY08g53tlJVkLg0yvXb7bRQmC9HGGme_qdRMuF4sFfcWh4kOySEc81o');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest bg-primary-container/20 text-primary px-3 py-1 border border-primary/20">Infrastructure</span>
+<span class="text-white/20 text-[10px] tracking-widest">PROJECT ID: NV-001</span>
+</div>
+<h2 class="font-['Space_Grotesk'] text-4xl font-bold mb-4">The Nairobi Viaduct</h2>
+<p class="text-on-surface-variant max-w-md text-sm leading-relaxed mb-6">
+                            Redefining urban connectivity through a multi-tier seismic-resistant elevated highway structure designed to withstand maximum tectonic shift while optimizing traffic flow.
+                        </p>
+<div class="flex gap-8 border-t border-white/5 pt-6">
+<div>
+<p class="text-[9px] text-white/40 uppercase tracking-widest mb-1">Span Length</p>
+<p class="font-['Space_Grotesk'] font-bold text-primary">4.2 KM</p>
+</div>
+<div>
+<p class="text-[9px] text-white/40 uppercase tracking-widest mb-1">Load Cap</p>
+<p class="font-['Space_Grotesk'] font-bold text-primary">450 Tons</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: Mombasa Deep-Sea Bridge (Structural) -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container-high min-h-[500px] flex flex-col p-8 md:p-12">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 grayscale hover:grayscale-0" data-alt="Modern suspension bridge cables over deep blue ocean water" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAv_-OV2-RYO0xcE2BR-LIW1k-JIv5KWUh8DeKS2j4V-5KX48bb9QRKK27vNZSmZ_p3BEe51zS-tRxTOpaVc0F5EXAUDr4iDO3XMxexGaIxXWjQ6qffieJN0ahTSocp2040Z0u5EdFG7hgDQgzcityToSJDtK322hYnFAFJFGvgDt-EnR7wfh1t9PLApyp6aEdTMKV6aabVP7Mm_Io4OZktLMLT0vGu9J5dmsWgkMHtnlb67q1JKccswEH7AnJ8mDEl4lxoKCmnOnM');"></div>
+<div class="relative z-10 mt-auto">
+<div class="mb-4">
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest bg-primary-container/20 text-primary px-3 py-1 border border-primary/20">Structural</span>
+</div>
+<h2 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">Mombasa Deep-Sea Bridge</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                            Solving the challenge of high-salinity corrosion and underwater foundation stability in the Indian Ocean currents.
+                        </p>
+<button class="flex items-center gap-2 group/btn font-['Inter'] text-xs font-bold uppercase tracking-widest text-primary">
+                            View Specs
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 3: Kianyaga Science Lab (Architectural) -->
+<div class="md:col-span-6 group relative overflow-hidden bg-surface-container-low min-h-[450px] flex flex-col justify-end p-8 md:p-12">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 grayscale hover:grayscale-0" data-alt="Interior of a futuristic laboratory with glass and steel structures" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx_ctXS7G4X_Gsv8rXOlsbkYryw9GKgS5HcCM47FncPfysS3H6tNLLoOj83abfpqDGUQd6pnRMCTdk-HTtfme-qdzn93MvqGU3Qt-CxtCIlCVgkkPMQhiLTrHKzMLwdwffeTBFNOtU64QeRTFdfsFNIA6vmMit7UK_iw_06_m6VzlhYkjQYuYpkFdmzxMaOW2dTA2MHN67nYaRnRttQmJwieC21p1_xwevhZNg5d7klVrGrbOkpWz35c_P-IM_tDWI1PnCQcIAU20');"></div>
+<div class="relative z-10">
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest bg-primary-container/20 text-primary px-3 py-1 border border-primary/20 inline-block mb-4">Architectural</span>
+<h2 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">Kianyaga Science Lab</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            A precision-engineered facility requiring absolute vibration isolation for high-frequency electron microscopy equipment.
+                        </p>
+</div>
+</div>
+<!-- Project 4: Industrial Logistics Hub (Logistics) -->
+<div class="md:col-span-6 group relative overflow-hidden bg-surface-container-highest min-h-[450px] flex flex-col justify-end p-8 md:p-12">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-30 grayscale hover:grayscale-0" data-alt="Aerial view of a massive modern distribution warehouse center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClhsb9ViyeTcbSHdBVJWwDtweBwKvfkZKudxpx6aojKPGZQh6Zo5lZ9QGyfOvdZKlgTIC-F3vA_E7TeJPxx10ZWVliFtXosMji9bWKP1LhKz4ziyigQnljmiYq9BDtOu1wVO_Y1MODUiG31ITKKnA9z52Xj6BaKqqKne9nN4oaww3g9PdXY-e5jrcPwU3R5Sr28M0uKvz21D-w7Lt-zMj7DwXQwR2EIaY4QcbzdgCiAmYQbPmOP_-1h3GZzCDFQhNnTVKXr2Pm-CQ');"></div>
+<div class="relative z-10">
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest bg-primary-container/20 text-primary px-3 py-1 border border-primary/20 inline-block mb-4">Logistics</span>
+<h2 class="font-['Space_Grotesk'] text-3xl font-bold mb-4">Industrial Logistics Hub</h2>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            300,000 sq. ft. of clear-span structural steel engineering designed for automated heavy-load crane systems.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Technical CTA Section -->
+<section class="mt-32 p-12 md:p-24 bg-surface-container-low relative overflow-hidden border-l-8 border-primary">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-5 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.7,-31.3,87.1,-15.7,85.2,-0.7C83.3,14.2,76.1,28.4,67.3,41.4C58.5,54.4,48.1,66.1,35.1,73.5C22.1,80.9,6.5,84,10,83C26.5,82,43,77,55,67C67,57,74.5,42,78,26C81.5,10,81,-7,76,-22C71,-37,61.5,-50,49,-59C36.5,-68,21,-73,4.5,-75C-12,-77,-24,-76,-36,-71C-48,-66,-60,-57,-68.5,-45C-77,-33,-82,-18,-81.5,-3.5C-81,11,-75,26,-66,39C-57,52,-45,63,-31,70C-17,77,-2,80,12,78C26,76,41,69,51,58C61,47,66,32,68,16" fill="#FFB77D" transform="translate(100 100)"></path>
+</svg>
+</div>
+<div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-['Space_Grotesk'] text-5xl font-bold mb-6">Let's build the <br/> impossible.</h2>
+<p class="text-on-surface-variant mb-8 text-lg">Our engineering consultation includes a full structural feasibility audit and technical material specification.</p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-primary-container transition-colors" href="#">
+                                Project Intake
+                                <span class="material-symbols-outlined">description</span>
+</a>
+<a class="border border-white/20 px-8 py-4 font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-white/5 transition-colors" href="#">
+                                Technical Standards
+                                <span class="material-symbols-outlined">settings_input_component</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="p-6 bg-surface-container-high">
+<h4 class="font-['Space_Grotesk'] text-3xl font-bold text-primary mb-2">150+</h4>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/40">Active Sites</p>
+</div>
+<div class="p-6 bg-surface-container-high">
+<h4 class="font-['Space_Grotesk'] text-3xl font-bold text-primary mb-2">KSh 4B</h4>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/40">Portfolio Value</p>
+</div>
+<div class="p-6 bg-surface-container-high">
+<h4 class="font-['Space_Grotesk'] text-3xl font-bold text-primary mb-2">0.0</h4>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/40">Safety Incidents</p>
+</div>
+<div class="p-6 bg-surface-container-high">
+<h4 class="font-['Space_Grotesk'] text-3xl font-bold text-primary mb-2">A++</h4>
+<p class="text-[10px] font-bold uppercase tracking-widest text-white/40">Material Grade</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 mt-auto bg-[#131313] border-t border-[#1C1B1B]">
+<div class="max-w-[1920px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<p class="font-['Inter'] text-[10px] tracking-widest uppercase text-white/30">© 2024 Xerode Civil Build. Architectural Integrity.</p>
+<div class="flex gap-4">
+<a class="text-white/30 hover:text-[#FFB77D] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="text-white/30 hover:text-[#FFB77D] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+</div>
+</div>
+<div class="flex gap-12">
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors duration-200" href="#">Legal</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors duration-200" href="#">Specifications</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors duration-200" href="#">Contact</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-white/30 hover:text-white transition-colors duration-200" href="#">Careers</a>
+</div>
+</div>
+</footer>
+</body></html>

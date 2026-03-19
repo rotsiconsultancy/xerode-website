@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#e9a771",
+                        "on-tertiary-fixed-variant": "#004c6c",
+                        "primary-container": "#ff8c00",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#fdb881",
+                        "on-primary": "#4d2600",
+                        "primary-fixed": "#ffdcc3",
+                        "secondary": "#fdb881",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#00b5fc",
+                        "outline": "#a48c7a",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#6a3b0f",
+                        "on-tertiary-container": "#004360",
+                        "on-secondary": "#4d2600",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#00344c",
+                        "tertiary-fixed": "#c7e7ff",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#85cfff",
+                        "on-secondary-fixed": "#2f1500",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "outline-variant": "#564334",
+                        "on-tertiary-fixed": "#001e2e",
+                        "on-primary-container": "#623200",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-primary": "#904d00",
+                        "on-primary-fixed": "#2f1500",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#85cfff",
+                        "inverse-on-surface": "#313030",
+                        "surface-tint": "#ffb77d",
+                        "primary-fixed-dim": "#ffb77d",
+                        "surface-bright": "#393939",
+                        "surface-dim": "#131313",
+                        "on-surface-variant": "#ddc1ae",
+                        "on-secondary-fixed-variant": "#6a3b0f",
+                        "on-error": "#690005",
+                        "primary": "#ffb77d"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 19, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .custom-cubic {
+            transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-6 w-full max-w-[1920px] mx-auto bg-[#131313]/60 backdrop-blur-xl">
+<div class="text-2xl font-black tracking-tighter text-[#FFB77D] uppercase font-headline">Xerode Civil Build</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline font-bold tracking-tight text-gray-400 hover:text-white transition-colors" href="#">Projects</a>
+<a class="font-headline font-bold tracking-tight text-gray-400 hover:text-white transition-colors" href="#">expertise</a>
+<a class="font-headline font-bold tracking-tight text-gray-400 hover:text-white transition-colors" href="#">Fleet</a>
+<a class="font-headline font-bold tracking-tight text-gray-400 hover:text-white transition-colors" href="#">Safety</a>
+<a class="font-headline font-bold tracking-tight text-gray-400 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 font-headline font-bold uppercase tracking-wider text-sm hover:bg-primary transition-all duration-300 active:scale-95 custom-cubic">
+            Consultation
+        </button>
+</nav>
+<!-- SideNavBar (Contextual for Project Page) -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-[#1C1B1B] hidden lg:flex flex-col py-8 pt-24">
+<div class="px-6 mb-12">
+<div class="text-lg font-bold text-[#FFB77D] font-headline mb-1">The Nairobi Viaduct</div>
+<div class="text-[10px] font-label font-medium uppercase tracking-widest text-gray-500">Project ID: NX-2024</div>
+</div>
+<nav class="flex-1 flex flex-col">
+<a class="flex items-center gap-4 px-6 py-4 bg-[#2A2A2A] text-[#FFB77D] border-l-4 border-[#FF8C00] font-label font-medium uppercase tracking-widest text-[10px] custom-cubic" href="#overview">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+                Overview
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-500 hover:bg-[#2A2A2A] hover:text-white font-label font-medium uppercase tracking-widest text-[10px] custom-cubic" href="#specs">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+                Specs
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-500 hover:bg-[#2A2A2A] hover:text-white font-label font-medium uppercase tracking-widest text-[10px] custom-cubic" href="#timeline">
+<span class="material-symbols-outlined" data-icon="reorder">reorder</span>
+                Timeline
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-500 hover:bg-[#2A2A2A] hover:text-white font-label font-medium uppercase tracking-widest text-[10px] custom-cubic" href="#gallery">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                Gallery
+            </a>
+<a class="flex items-center gap-4 px-6 py-4 text-gray-500 hover:bg-[#2A2A2A] hover:text-white font-label font-medium uppercase tracking-widest text-[10px] custom-cubic" href="#contact">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                Contact
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-surface-container-high text-primary border border-primary/20 font-label font-bold uppercase text-[10px] tracking-widest hover:bg-primary-container hover:text-on-primary transition-all custom-cubic">
+                Download Blueprint
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-end p-8 md:p-16 overflow-hidden" id="overview">
+<div class="absolute inset-0 z-0">
+<img alt="The Nairobi Viaduct" class="w-full h-full object-cover" data-alt="Cinematic shot of a modern concrete viaduct at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy7IX0EZcc_6RnBtKGoY1bvRXyr5d61rTvcsONU-U_948cyhIPPB3oozIUCCobrHlWHK-81-on5vxfQk_GRaJz94Rh_SFAguKPINFW0ViHb4bHS9JZhjzw98X4mU9F0Ljp0zcb6gJa47kvrczLUekQ_x9ah5vLFW-Ppo485uDQwp-JoN3ySRsIC3t4fyu8cJBaTM-rKXuUb00OuNCF9nb0jNf2Z0Uabtt9DfLW3_P2DhumALSB2mnMMd4dz3Fb2qmn3QDyLV1YSJ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-5xl">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-none mb-8">
+                    The Nairobi Viaduct:<br/><span class="text-primary-container">Urban Mobility Reimagined.</span>
+</h1>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-outline-variant/30">
+<div>
+<div class="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-2">Total Extension</div>
+<div class="font-headline text-4xl font-bold">4.2 KM Length</div>
+</div>
+<div>
+<div class="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-2">Structural Capacity</div>
+<div class="font-headline text-4xl font-bold">450 Tons Load</div>
+</div>
+<div>
+<div class="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-2">Construction Cycle</div>
+<div class="font-headline text-4xl font-bold">24-Month Build</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications -->
+<section class="bg-surface-container-low py-24 px-8 md:px-16" id="specs">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
+<h2 class="font-headline text-4xl font-bold tracking-tight uppercase">Technical<br/>Specifications</h2>
+<p class="max-w-md text-on-surface-variant font-light leading-relaxed">
+                        Engineered for a 100-year lifecycle using advanced composite materials and seismic-dampening technology designed to withstand East Africa's unique geological conditions.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20">
+<div class="bg-surface p-8 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="foundation">foundation</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight">Materiality</h3>
+<p class="text-sm text-on-surface-variant">C40/50 High-Performance Concrete reinforced with epoxy-coated steel rebar for maximum corrosion resistance.</p>
+</div>
+<div class="bg-surface p-8 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="earthquake">earthquake</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight">Seismic Integrity</h3>
+<p class="text-sm text-on-surface-variant">Lead-rubber bearing isolators integrated into every pier head to absorb 85% of lateral seismic forces.</p>
+</div>
+<div class="bg-surface p-8 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="straighten">straighten</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight">Precision Geometry</h3>
+<p class="text-sm text-on-surface-variant">Laser-aligned segmental casting ensuring tolerance levels within +/- 2mm across the entire span.</p>
+</div>
+<div class="bg-surface p-8 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="eco">eco</span>
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight">Sustainability</h3>
+<p class="text-sm text-on-surface-variant">Low-carbon fly ash cement blend reducing the total carbon footprint of the build by 22%.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Structural Challenges & Innovation -->
+<section class="py-24 px-8 md:px-16">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+<!-- Text Heavy Column -->
+<div class="flex-1">
+<div class="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-6">Engineering Journal</div>
+<h2 class="font-headline text-5xl font-bold tracking-tight mb-12">Navigating Complexity Through Modular Innovation.</h2>
+<div class="space-y-8 text-on-surface-variant leading-relaxed text-lg font-light">
+<p>
+                            The Nairobi Viaduct presented a unique set of logistical and structural hurdles. Traversing through dense urban corridors required a construction methodology that minimized surface-level disruption while maintaining an aggressive timeline.
+                        </p>
+<p>
+                            Our multi-tier engineering approach utilized a pre-cast segmental launching gantry system. Each segment was cast in a controlled off-site facility and transported during low-traffic windows, allowing the structure to "grow" above the existing city without halting the rhythm of Nairobi's streets.
+                        </p>
+<p>
+                            By implementing a cantilever construction technique, we were able to span existing waterways and utility intersections without the need for temporary ground scaffolding, ensuring that the environmental and infrastructure impact remained negligible.
+                        </p>
+</div>
+</div>
+<!-- Innovation Side Panel -->
+<div class="w-full lg:w-96">
+<div class="bg-surface-container-high p-8 border-l-2 border-primary">
+<h4 class="font-headline font-bold text-2xl mb-8 uppercase tracking-tight">Innovation Highlights</h4>
+<ul class="space-y-8">
+<li class="flex gap-4">
+<div class="w-1.5 h-12 bg-outline-variant flex-shrink-0">
+<div class="h-2/3 bg-primary w-full"></div>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm uppercase mb-1">Vibration Isolation</h5>
+<p class="text-xs text-on-surface-variant">Advanced elastomeric pads placed between the deck and piers to silence heavy vehicle harmonics.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="w-1.5 h-12 bg-outline-variant flex-shrink-0">
+<div class="h-full bg-primary w-full"></div>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm uppercase mb-1">Sustainable Drainage</h5>
+<p class="text-xs text-on-surface-variant">Integrated bio-retention basins at off-ramp points to filter runoff before entering the city system.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="w-1.5 h-12 bg-outline-variant flex-shrink-0">
+<div class="h-1/4 bg-primary w-full"></div>
+</div>
+<div>
+<h5 class="font-headline font-bold text-sm uppercase mb-1">Smart Sensors</h5>
+<p class="text-xs text-on-surface-variant">Fiber-optic strain gauges embedded in the structure for real-time integrity monitoring via 5G.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Gallery -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-lowest" id="gallery">
+<div class="max-w-[1920px] mx-auto">
+<div class="flex items-end justify-between mb-16">
+<h2 class="font-headline text-4xl font-bold uppercase tracking-tighter">Project<br/>Visuals</h2>
+<div class="font-label text-xs uppercase tracking-widest text-gray-500">Exhibit NX-2024 / ARCHIVE</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<div class="md:col-span-8 group overflow-hidden bg-surface-container">
+<img alt="Construction detail" class="w-full h-[500px] object-cover grayscale brightness-75 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="High-contrast black and white photo of steel reinforcements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS8rnJUOJTyUNxrjQDmccQpvrfSotUU38Iu7ul3ppVopBwVsF2aanDoEr67pVxE_fX5-C7CsdTCN8srahnj8AgE1o7JT8AVSAmf6mMp-QySoePZle2JwqZ0qC_veAR0gytojcR6yE2X1pFXFComDW8eSDJ1fyU6sRuadu3AP_EG3grY47IqKlEsHvlciZ6BZ7V9nEANS1lqqKgFo9qSL20lwjkF2I8ARZ4lRl7DtuRO7x6DRKeOeXTvwMQlL4z_HV1x24fgvUKba0"/>
+</div>
+<div class="md:col-span-4 group overflow-hidden bg-surface-container">
+<img alt="Finished structure" class="w-full h-[500px] object-cover grayscale brightness-75 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Black and white shot of concrete viaduct geometry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlYFIdemJda3j5UYO6geG8rhpM7L8d8OaFRgD9lTxYicmfrl4vMbaS-57qottECA3cJzoY0Yx_Z0e4KpTnI7Q6WDM1kXx7yJH8otGSfAfSlqLifkNzRmCy7D759crg1_UlZZtMHayVA1u3mlfvZo4zrlL0U7M4IjdQHNHXfJqQoHRTozNJ0Sn5KB4wJUekHAOIy_yl5xZ3Wkj_17q-zNry9AFlafR_keGoZhnSka7FO4kE2UbrtzDptUUKexlUjrzMEfo6X61M0mk"/>
+</div>
+<div class="md:col-span-4 group overflow-hidden bg-surface-container">
+<img alt="Aerial view" class="w-full h-[400px] object-cover grayscale brightness-75 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Technical blueprint-style photo of the construction site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdBcsBRfUO9Vij8kQ9JR6UWEGpXJzy_s6HL5RYn2pVkQNH_xfdhXGQvNV2iJsRr3RdFCZpcfjx1azffWX8PY9TFTSlKWb9hbx-IVWRQDIn-EJfZGViu7MTTkioiYWXBkut048fmh9veYsOFV1JOkNtPjkKl4hIHhVLnkFRDkuC6RqUZFjFxqN_jfehov-ycUaSrA6MtJF3Or_E4SdTTakQAaamYqzkUByj3ZCgOdiORtWIIvahCwLorAcC5RrVxNGWRyHSBw4CiGE"/>
+</div>
+<div class="md:col-span-4 group overflow-hidden bg-surface-container">
+<img alt="Detailed pier" class="w-full h-[400px] object-cover grayscale brightness-75 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Architectural detail of the viaduct pier support" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0Q3JlQZByJ7yx9dmpLiuCVuY7yhQEOQ_J3Zkv3ljd9MLZB--xwVZTMVvAPjjLBvCcWQkz3ycDC-DB7xEhm3vZdhvSm8bQi9j9MG-n5-DV00J82Sh8y0Etn50Jo8HO0hV57NXy_0_ldJDnXl9gjJNpkbmGOcth8aaJLBGvPt3eDH2hMNASePhIRIQu6jNwIsUlQJFj8iBY2HsIstxnlvFzmbtgE9HpK-8tKljqFvWSo-RecmF-Hb5B92vairW233i6--UBF1xDCw"/>
+</div>
+<div class="md:col-span-4 group overflow-hidden bg-surface-container">
+<img alt="Engineers at work" class="w-full h-[400px] object-cover grayscale brightness-75 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" data-alt="Close up of civil engineering tools and site plans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG1GuXZWM1-_lXYFTl7zKh7nwnyclQfKbJwip54pQoRz8Wmkm2GxxCyEZWo6s8YcCgOVfRzU2oMOCSSDJZNmVJ50dcxi8etBfQXTsrA_6LzjRqA5-kYLZzWLI1y5pQ7n0LygH7OIwRD-swh-aJwcW9Xelj5yyZMIP2UdHc210UndWVqsqpYJ7HVobG72i7rEXFgxQzbq3Os0fyCQUGVg_SRgIC9nZVC1abuoYYkUi7wMZsdHCrlhM-ukH0WzrFmLlY1W4v9bekyPs"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-32 px-8 md:px-16 text-center" id="contact">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase mb-12">Engineering the Future Together.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-primary-container text-on-primary px-10 py-5 font-headline font-bold uppercase tracking-wider hover:bg-primary transition-all duration-300 active:scale-95 custom-cubic">
+                        Download Technical Specs
+                    </button>
+<button class="bg-transparent border-2 border-primary text-primary px-10 py-5 font-headline font-bold uppercase tracking-wider hover:bg-primary/10 transition-all duration-300 active:scale-95 custom-cubic">
+                        Schedule a Consultation
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-8 border-t border-[#1C1B1B]/15 bg-[#131313]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-[1920px] mx-auto gap-8">
+<div class="font-black text-[#FFB77D] font-headline uppercase text-xl">Xerode Civil Build</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-[#FFB77D] transition-colors" href="#">Privacy Policy</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-[#FFB77D] transition-colors" href="#">Terms of Service</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-[#FFB77D] transition-colors" href="#">Environmental Impact</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-[#FFB77D] transition-colors" href="#">Ethics</a>
+</div>
+<div class="font-label text-xs uppercase tracking-[0.2em] text-gray-500">
+                    © 2024 Xerode Civil Build. Structural Integrity Guaranteed.
+                </div>
+</div>
+</footer>
+</main>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#131313] border-t border-outline-variant/10 grid grid-cols-5 py-3 z-50">
+<button class="flex flex-col items-center gap-1 text-[#FFB77D]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="text-[8px] uppercase font-label">Specs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="text-[8px] uppercase font-label">Engine</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined">reorder</span>
+<span class="text-[8px] uppercase font-label">Timeline</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[8px] uppercase font-label">Gallery</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-500">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[8px] uppercase font-label">Contact</span>
+</button>
+</nav>
+</body></html>

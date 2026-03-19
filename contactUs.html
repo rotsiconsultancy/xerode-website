@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#313030",
+                        "surface-tint": "#ffb77d",
+                        "primary-fixed-dim": "#ffb77d",
+                        "surface-bright": "#393939",
+                        "surface-dim": "#131313",
+                        "on-surface-variant": "#ddc1ae",
+                        "on-secondary-fixed-variant": "#6a3b0f",
+                        "on-error": "#690005",
+                        "primary": "#ffb77d",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#00344c",
+                        "tertiary-fixed": "#c7e7ff",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#85cfff",
+                        "on-secondary-fixed": "#2f1500",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "outline-variant": "#564334",
+                        "on-tertiary-fixed": "#001e2e",
+                        "on-primary-container": "#623200",
+                        "secondary-fixed": "#ffdcc3",
+                        "inverse-primary": "#904d00",
+                        "on-primary-fixed": "#2f1500",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#85cfff",
+                        "tertiary-container": "#00b5fc",
+                        "outline": "#a48c7a",
+                        "background": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#6a3b0f",
+                        "on-tertiary-container": "#004360",
+                        "on-secondary": "#4d2600",
+                        "surface": "#131313",
+                        "on-secondary-container": "#e9a771",
+                        "on-tertiary-fixed-variant": "#004c6c",
+                        "primary-container": "#ff8c00",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#fdb881",
+                        "on-primary": "#4d2600",
+                        "primary-fixed": "#ffdcc3",
+                        "secondary": "#fdb881",
+                        "on-error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .architectural-grid {
+            background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-8 py-6 max-w-none fixed top-0 z-50">
+<div class="text-2xl font-black tracking-tighter text-[#FFB77D]">Xerode Civil</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-gray-400 font-['Space_Grotesk'] font-bold tracking-tight hover:text-[#FFB77D] transition-colors duration-300 scale-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]" href="#">Projects</a>
+<a class="text-gray-400 font-['Space_Grotesk'] font-bold tracking-tight hover:text-[#FFB77D] transition-colors duration-300 scale-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]" href="#">Services</a>
+<a class="text-gray-400 font-['Space_Grotesk'] font-bold tracking-tight hover:text-[#FFB77D] transition-colors duration-300 scale-95 duration-200 ease-[cubic-bezier(0.2,0,0,1)]" href="#">About</a>
+<a class="text-[#FFB77D] border-b-2 border-[#FFB77D] pb-1 font-['Space_Grotesk'] font-bold tracking-tight" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-headline font-bold text-sm tracking-tight hover:bg-primary transition-colors duration-300 rounded-DEFAULT">
+            Request Quote
+        </button>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-end px-8 pb-24 architectural-grid border-b border-outline-variant/10 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent"></div>
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<span class="font-label text-primary uppercase tracking-[0.3em] text-xs mb-4 block">Structural Inquiries</span>
+<h1 class="font-headline text-7xl md:text-9xl font-bold tracking-tighter leading-none">
+                    Get in <br/><span class="text-primary-container">Touch.</span>
+</h1>
+</div>
+<!-- Decorative Element -->
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">
+<img alt="Minimalist architectural blueprint pattern" class="w-full h-full object-cover grayscale" data-alt="Technical architectural blueprint lines and drafting patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdFCwmL5lL1Ihw5fsD-EN0fdhlpjJj1t27B88lpIwDVyiFgchV0uzg6YGHKizrBLEvt-3vuXCoJygHzr3ORnnisGNdFvufwdou9UPkdDSK_b_h6jyycijT0bmJNRD6EZ8fluVc6tORzGOh2hPwY0HM0OBdr5Mo3RlMClcxEEwWYzogQ0LKkdCzzQGuE7SjE60AL0tVmriWwYr9BH0jSKHGjcQ2MrsLbfFLutbgX-5pE2I03BHpvwH9ep9Bmh0tJ0-q3kbRjMamlUw"/>
+</div>
+</section>
+<!-- Main Section: Form & Addresses -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+<!-- Left Column: Contact Form -->
+<div class="lg:col-span-7 space-y-12">
+<div class="space-y-4">
+<h2 class="font-headline text-4xl font-bold tracking-tight">Project Inquiry</h2>
+<p class="text-on-surface-variant font-body max-w-md">Our engineering team is ready to analyze your requirements. Submit your project details below for a comprehensive technical review.</p>
+</div>
+<form class="space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline block mb-2">Full Name</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary focus:outline-none py-3 font-body text-on-surface transition-all duration-300 placeholder:text-surface-container-highest uppercase text-sm" placeholder="ARCHITECT / MANAGER" type="text"/>
+</div>
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline block mb-2">Email Address</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary focus:outline-none py-3 font-body text-on-surface transition-all duration-300 placeholder:text-surface-container-highest uppercase text-sm" placeholder="OFFICIAL@DOMAIN.COM" type="email"/>
+</div>
+</div>
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline block mb-2">Subject</label>
+<input class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary focus:outline-none py-3 font-body text-on-surface transition-all duration-300 placeholder:text-surface-container-highest uppercase text-sm" placeholder="STRUCTURAL DESIGN / LOGISTICS / CIVIL WORKS" type="text"/>
+</div>
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-outline block mb-2">Project Inquiry Details</label>
+<textarea class="w-full bg-transparent border-b-2 border-outline-variant/30 focus:border-primary focus:outline-none py-3 font-body text-on-surface transition-all duration-300 placeholder:text-surface-container-highest uppercase text-sm resize-none" placeholder="DESCRIBE THE SCOPE, LOCATION, AND TECHNICAL REQUIREMENTS..." rows="4"></textarea>
+</div>
+<button class="bg-primary-container hover:bg-primary text-on-primary font-headline font-bold py-5 px-12 transition-all duration-[cubic-bezier(0.2,0,0,1)] flex items-center gap-4 group" type="submit">
+<span>SUBMIT REQUEST</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Right Column: Office Addresses -->
+<div class="lg:col-span-5 space-y-16">
+<div class="bg-surface-container-low p-12 relative overflow-hidden">
+<!-- Background Accents -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 -mr-12 -mt-12 rounded-full blur-3xl"></div>
+<div class="space-y-12 relative z-10">
+<!-- Nairobi HQ -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[2px] bg-primary"></span>
+<h3 class="font-headline text-2xl font-bold tracking-tight">Nairobi HQ</h3>
+</div>
+<div class="space-y-3 font-body text-on-surface-variant text-sm leading-relaxed">
+<p class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+                                        Xerode Towers, 14th Floor<br/>Riverside Drive, Nairobi, Kenya
+                                    </p>
+<p class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-sm">phone</span>
+                                        +254 700 000 000
+                                    </p>
+<p class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+                                        hq@xerode.com
+                                    </p>
+</div>
+</div>
+<hr class="border-outline-variant/10"/>
+<!-- Kampala Office -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[2px] bg-primary"></span>
+<h3 class="font-headline text-2xl font-bold tracking-tight">Kampala Office</h3>
+</div>
+<div class="space-y-3 font-body text-on-surface-variant text-sm leading-relaxed">
+<p class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+                                        Civil Plaza, Suite 4B<br/>Kira Road, Kampala, Uganda
+                                    </p>
+<p class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-sm">phone</span>
+                                        +256 700 000 000
+                                    </p>
+<p class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+                                        ug@xerode.com
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Progress Pylon Custom Component -->
+<div class="flex gap-4 items-center">
+<div class="flex flex-col items-center gap-2">
+<div class="w-[2px] h-8 bg-primary"></div>
+<div class="w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<div class="w-[2px] h-24 bg-outline-variant/30"></div>
+</div>
+<div class="pb-20">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary mb-1 block">Response Time</span>
+<h4 class="font-headline text-lg font-bold">24-48 Business Hours</h4>
+<p class="text-on-surface-variant text-xs mt-2 font-body">Our structural engineers prioritize inquiries by technical complexity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[500px] grayscale contrast-[1.1] brightness-[0.8] mt-12 relative">
+<div class="absolute inset-0 bg-primary/5 pointer-events-none mix-blend-overlay"></div>
+<img alt="Dark technical map of Nairobi" class="w-full h-full object-cover" data-alt="Dark monochrome stylized map view of Nairobi city grid" data-location="Nairobi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANUQTn-1pG8jdWmuWv0Q5_6GAPLPGl9cNumCfOobo6OEng8bO5QTYMo5j6W4vjPxvqbzgyB2Q2KrBJoTKtllPmafqoS-0u0elU9oA1XMJBbhIFO_wDh6JvX9HOf6kwxfto83tNzFXmm4YRf2b2De3aEYRV0f4AMAUX2UTUgaWLiY2KkaplBXTgMWPpYCbwmEjW_GutDN9ohsuZaH6SAqap4gkA1HvtemukGVXeHRlceX6X3QLfCJMS5c2NiBn57TvR0AMDXyJWaR0"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group">
+<div class="bg-primary text-on-primary p-3 rounded-full shadow-2xl animate-pulse">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="mt-4 bg-surface-container-high px-4 py-2 text-[10px] font-label tracking-widest uppercase border border-outline-variant/20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">Xerode HQ</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] dark:bg-[#131313] w-full py-12 px-8 border-t border-[#353534] opacity-15">
+<div class="w-full mt-auto flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+<div class="text-[#FFB77D] font-bold text-lg mb-4 md:mb-0">Xerode Civil Build</div>
+<div class="flex gap-8 mb-4 md:mb-0">
+<a class="text-gray-500 hover:text-white transition-opacity font-['Inter'] text-sm" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-white transition-opacity font-['Inter'] text-sm" href="#">Terms of Service</a>
+<a class="text-gray-500 hover:text-white transition-opacity font-['Inter'] text-sm" href="#">Nairobi HQ</a>
+<a class="text-gray-500 hover:text-white transition-opacity font-['Inter'] text-sm" href="#">Kampala Office</a>
+</div>
+<div class="text-gray-500 font-['Inter'] text-sm">© 2024 Xerode Civil Build. All structural rights reserved.</div>
+</div>
+</footer>
+</body></html>
